@@ -361,7 +361,7 @@ export async function getModelFile(path_or_repo_id, filename, fatal = true, opti
         // Caching not available, or file is not cached, so we perform the request
 
         let isURL = isValidHttpUrl(request);
-        let localPath = pathJoin(env.localModelPath, request);
+        let localPath = path.join(env.localModelPath, request)
 
         if (env.allowLocalModels) {
             // Accessing local models is enabled, so we try to get the file locally.
